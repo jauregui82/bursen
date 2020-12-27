@@ -1,0 +1,1 @@
+{"ast":null,"code":"//Atoms components\nexport * from \"./atoms\";","map":{"version":3,"sources":["/Users/jaureguicrespo/Documents/development/bursen/components/template/index.js"],"names":[],"mappings":"AAAA;AACA,cAAc,SAAd","sourcesContent":["//Atoms components\nexport * from \"./atoms\";"]},"metadata":{},"sourceType":"module"}

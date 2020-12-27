@@ -1,0 +1,35 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*Resset styles boostrap*/
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+  color: #fff;
+  border-bottom: solid;
+}
+nav.jau-nav .navbar .navbar-expand-lg .navbar-light {
+  color: #fff;
+  position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: transparent!important;
+}
+
+.jau-nav{
+  
+}
