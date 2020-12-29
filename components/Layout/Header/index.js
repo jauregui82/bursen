@@ -1,9 +1,16 @@
+import { Grid } from "@material-ui/core"
+import { CustomButton } from "../../template"
 
 const CustonHeader = () => {
   return (
     <>
         <header>
-            <img className="image" src="/banner.svg" alt="me"/>
+            {/* <img className="image" src="/banner.svg" alt="me"/> */}
+            <Grid container>
+                <Grid item >
+                    <CustomButton>Holaaaaaa </CustomButton>
+                </Grid>
+            </Grid>
         </header>
         <style jsx>
             {`
@@ -15,6 +22,7 @@ const CustonHeader = () => {
                     position: relative;
                     left: 0;
                 }
+                
                 
             `}
         </style>

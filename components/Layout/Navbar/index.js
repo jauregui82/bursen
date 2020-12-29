@@ -1,47 +1,93 @@
-import { Nav, Navbar } from "react-bootstrap"
-import { palett } from "../../../styles/theme";
-import { CustonBanner } from "../../template";
+import { useRouter } from 'next/router'
+import Link from "next/link";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Container
+} from "@material-ui/core";
+import { Home } from "@material-ui/icons";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
-const CustomNavbar = () =>{
-     
-    return(
-        <>
-            <Navbar className="jau-nav" collapseOnSelect expand="lg">
-            <Navbar.Brand href="#home">Logo</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
-                
-                <Nav>
-                    <Nav.Link href="#ingreso-simulador">Ingreso al simulador</Nav.Link>
-                    <Nav.Link eventKey={2} href="#como-usar-simulador">
-                        Cómo usar este simulador
-                    </Nav.Link>
-                    <Nav.Link eventKey={3} href="#preguntas-frecuentes">
-                        Pregúntas frecuentes
-                    </Nav.Link>
-                    <Nav.Link eventKey={4} href="#contacto">
-                        Contáctanos
-                    </Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-            </Navbar>
-            <style jsx>
-                {`
-                    div {
-                        width: 100%;
-                    }
-                    .nav-link .active{
-                        color: red
-                    }
-                    .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
-                        color: #fff;
-                        border-bottom: solid;
-                    }
-                    
-                `}
-            </style>
-        </>
-    )
-}
+const useStyles = makeStyles({
+  appbar: {
+    backgroundColor: "#556cd60a", 
+    boxShadow: "none"
+  },
+  navbarDisplayFlex: {
+    display: `flex`,
+    justifyContent: `space-between`
+  },
+  navDisplayFlex: {
+    display: `flex`,
+    justifyContent: `space-between`
+  },
+  linkText: {
+    textDecoration: `none`,
+    color: `white`,
+},
+listItem:{
+      fontSize: 14,
+    "&.Mui-selected": {
+        borderBottom: 'solid',
+      }
+  }
+});
 
-export default CustomNavbar;
+const navLinks = [
+  { title: `Ingreso al simulador`, path: `#ingreso-simulador` },
+  { title: `Cómo usar este simulador`, path: `#como-usar-simulador` },
+  { title: `Pregúntas frecuentes`, path: `#preguntas-frecuentes` },
+  { title: `Contáctanos`, path: `#contacto` },
+];
+
+const CustomListItem = withStyles({
+    primary: {
+      fontSize: 14
+    },
+    root:{
+        body:{
+            fontSize:14
+        }
+    }
+  })(ListItem);
+
+const Header = () => {
+  const classes = useStyles();
+  const router = useRouter();
+
+  return (
+      
+    <AppBar position="absolute" className={classes.appbar}>
+      <Toolbar>
+        <Container maxWidth="xl" className={classes.navbarDisplayFlex}>
+          <IconButton edge="start" color="inherit" aria-label="home">
+            <Home fontSize="large" />
+          </IconButton>
+          <List
+            component="nav"
+            aria-labelledby="main navigation"
+            className={classes.navDisplayFlex}
+          >
+            {navLinks.map((item,i) => (
+                <Link href={item.path} key={i} className={classes.linkText} >
+                    <CustomListItem 
+                        className={classes.listItem}
+                        button 
+                        selected={router.asPath.split("/")[1] === item.path ? true : false}
+                    >
+                        <ListItemText primary={item.title} />
+                    </CustomListItem>
+                </Link>
+                // <a href={item.path} key={i} className={classes.linkText}></a>
+            ))}
+          </List>
+        </Container>
+      </Toolbar>
+    </AppBar>
+  );
+};
+export default Header;
