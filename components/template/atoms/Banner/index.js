@@ -25,10 +25,10 @@ const CustonBanner = () => {
                         <CustomTypography name="title1" > Bienvenido al simulador de <strong>BURSEN</strong></CustomTypography>
                     </Grid>
                     <Grid item>
-                    <CustomButton>Inisiar sesión </CustomButton>
+                        <CustomButton>Inisiar sesión </CustomButton>
                     </Grid>
                     <Grid item>
-                    <CustomButton type="btnWhite">Ver consursos </CustomButton>
+                        <CustomButton type="btnWhite">Ver consursos </CustomButton>
                     </Grid>
                 </Grid>
             </Grid>
@@ -38,7 +38,7 @@ const CustonBanner = () => {
         </Grid>
     </div>
         {/* <img className="image" src="/banner.svg" alt="me"/> */}
-        
+
         <style jsx>
             {`
                 img {
@@ -50,17 +50,14 @@ const CustonBanner = () => {
                     left: 0;
                 }
                 div {
-                    height:100vh;
-                    width: 100vw;
-                    min-height:400px;
+                    min-height: 820px;
                     background-size:cover;
                     background-image:url('/banner.svg');
-                    
                 }
                 .content-section-1 {
                     padding: 0 150px;
                 }
-                
+
             `}
         </style>
     </>
