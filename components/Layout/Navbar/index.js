@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     color: `white`,
 },
 listItem:{
-      fontSize: 14,
+    padding:0,
     "&.Mui-selected": {
         borderBottom: 'solid',
       }
@@ -45,15 +45,14 @@ const navLinks = [
 ];
 
 const CustomListItem = withStyles({
-    primary: {
-      fontSize: 14
+    primary:{
+        fontSize:14
     },
     root:{
-        body:{
-            fontSize:14
-        }
+        minWidth: 'max-content',
+         margin: '0 20px',
     }
-  })(ListItem);
+  })(ListItemText);
 
 const Header = () => {
   const classes = useStyles();
@@ -74,13 +73,13 @@ const Header = () => {
           >
             {navLinks.map((item,i) => (
                 <Link href={item.path} key={i} className={classes.linkText} >
-                    <CustomListItem 
+                    <ListItem 
                         className={classes.listItem}
                         button 
                         selected={router.asPath.split("/")[1] === item.path ? true : false}
                     >
-                        <ListItemText primary={item.title} />
-                    </CustomListItem>
+                        <CustomListItem primary={item.title}/>
+                    </ListItem>
                 </Link>
                 // <a href={item.path} key={i} className={classes.linkText}></a>
             ))}
