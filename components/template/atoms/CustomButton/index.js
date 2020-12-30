@@ -4,7 +4,7 @@ import { palett } from "../../../../styles/theme";
 /**
  * @param {string} action - Action for button.
  * @param {string} children - Text button.
- * @param {('btnRed'|'btnWhite')} type - if btnRed button is color red, else btnWhite is color white  
+ * @param {('btnRed'|'btnWhite')} type - if btnRed button is color red, else btnWhite is color white
  * @param {boolean} disabled - True o false disabled button
  */
 const CustomButton = ({ action, children, type, disabled }) =>{
@@ -29,7 +29,6 @@ const CustomButton = ({ action, children, type, disabled }) =>{
                         left: 0px;
                         top: 0px;
                         border-radius: 4px;
-                        font-family: Helvetica Neue
 
                     }
                     button:active {
