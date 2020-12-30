@@ -9,7 +9,7 @@ const Section2 = () =>{
 
     return(
         <>
-            <div id="ingreso-simulador" style={{padding: "5rem 0", boxShadow: "0px -3px 0px #fff"}}>
+            <div id="ingreso-simulador" style={{padding: "4rem 0 12rem", boxShadow: "0px -3px 0px #fff"}}>
                 <Grid
                     container
                     direction="row"

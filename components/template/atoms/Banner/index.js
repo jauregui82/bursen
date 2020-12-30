@@ -52,10 +52,10 @@ const CustonBanner = () => {
                 div {
                     min-height: 820px;
                     background-size:cover;
-                    background-image:url('/banner.svg');
+                    background-image:url('/banner.png');
                 }
                 .content-section-1 {
-                    padding: 0 150px;
+                    padding: 0 150px 70px;
                 }
 
             `}

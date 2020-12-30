@@ -14,7 +14,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   appbar: {
-    backgroundColor: "#556cd60a", 
+    backgroundColor: "transparent", 
     boxShadow: "none"
   },
   navbarDisplayFlex: {
@@ -33,6 +33,13 @@ listItem:{
     padding:0,
     "&.Mui-selected": {
         borderBottom: 'solid',
+        backgroundColor: "transparent",
+        "&:hover": {
+            backgroundColor: "transparent"
+          }
+      },
+    "&:hover": {
+        backgroundColor: "transparent"
       }
   }
 });
@@ -50,7 +57,7 @@ const CustomListItem = withStyles({
     },
     root:{
         minWidth: 'max-content',
-         margin: '0 20px',
+        margin: '9px 37px 29px 37px',
     }
   })(ListItemText);
 
@@ -64,7 +71,7 @@ const Header = () => {
       <Toolbar>
         <Container maxWidth="xl" className={classes.navbarDisplayFlex}>
           <IconButton edge="start" color="inherit" aria-label="home">
-            <Home fontSize="large" />
+            <img src="./logo.svg" />
           </IconButton>
           <List
             component="nav"
@@ -72,7 +79,7 @@ const Header = () => {
             className={classes.navDisplayFlex}
           >
             {navLinks.map((item,i) => (
-                <Link href={item.path} key={i} className={classes.linkText} >
+                <Link href={item.path} key={`link-${i}`} className={classes.linkText} >
                     <ListItem 
                         className={classes.listItem}
                         button 
@@ -81,7 +88,6 @@ const Header = () => {
                         <CustomListItem primary={item.title}/>
                     </ListItem>
                 </Link>
-                // <a href={item.path} key={i} className={classes.linkText}></a>
             ))}
           </List>
         </Container>

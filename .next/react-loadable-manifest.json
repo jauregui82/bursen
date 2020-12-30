@@ -4,5 +4,135 @@
       "id": "./node_modules/next/dist/client/dev/noop.js",
       "file": "static/chunks/0.js"
     }
+  ],
+  "react-owl-carousel": [
+    {
+      "id": "./node_modules/create-react-class/factory.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/emptyFunction.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/emptyObject.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/invariant.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/warning.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/prop-types/factory.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/KeyEscapeUtils.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/PooledClass.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/React.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactBaseClasses.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactChildren.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactComponentTreeHook.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactCurrentOwner.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactDOMFactories.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactElement.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactElementSymbol.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactElementValidator.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactNoopUpdateQueue.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactPropTypeLocationNames.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactPropTypes.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactPropTypesSecret.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/ReactVersion.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/canDefineProperty.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/checkReactTypeSpec.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/createClass.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/getIteratorFn.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/lowPriorityWarning.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/onlyChild.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/reactProdInvariant.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/lib/traverseAllChildren.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/node_modules/react/react.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./node_modules/react-owl-carousel/umd/OwlCarousel.js",
+      "file": "static/chunks/1.js"
+    }
   ]
 }

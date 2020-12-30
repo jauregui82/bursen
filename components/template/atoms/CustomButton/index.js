@@ -29,6 +29,7 @@ const CustomButton = ({ action, children, type, disabled }) =>{
                         left: 0px;
                         top: 0px;
                         border-radius: 4px;
+                        font-family: "Helvetica Neue"
 
                     }
                     button:active {

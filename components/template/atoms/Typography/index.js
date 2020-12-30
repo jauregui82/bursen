@@ -1,8 +1,9 @@
-import { Card, CardContent, makeStyles, Typography } from "@material-ui/core"
+import { makeStyles, Typography } from "@material-ui/core"
 const useStyles = makeStyles({
     title1:{
         fontSize: 48,
-        color: "#ffff"
+        color: "#ffff",
+        lineHeight: 1.2,
     },
     title2:{
         fontSize: 24,
