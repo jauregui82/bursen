@@ -25,7 +25,7 @@ const CustonBanner = () => {
                         <CustomTypography name="title1" > Bienvenido al simulador de <strong>BURSEN</strong></CustomTypography>
                     </Grid>
                     <Grid item>
-                        <CustomButton>Inisiar sesión </CustomButton>
+                        <CustomButton>Iniciar sesión </CustomButton>
                     </Grid>
                     <Grid item>
                         <CustomButton type="btnWhite">Ver consursos </CustomButton>

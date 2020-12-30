@@ -9,13 +9,12 @@ const Section2 = () =>{
 
     return(
         <>
-            <div id="ingreso-simulador" style={{padding: "5rem 0"}}>
+            <div id="ingreso-simulador" style={{padding: "5rem 0", boxShadow: "0px -3px 0px #fff"}}>
                 <Grid
                     container
                     direction="row"
                     justify="center"
                     alignItems="center"
-
                 >
                     <Grid item xs={12}>
                         <CustomTypography name="title2">¿Qué podrás realizar en este simulador?</CustomTypography>
@@ -26,7 +25,7 @@ const Section2 = () =>{
                     direction="row"
                     justify="center"
                     alignItems="center"
-
+                    style={{ gap: '30px' }}
                 >
                     <Grid item xs={12} sm={2}>
                         <CustomCard linkImg="./card3.svg" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm." />
