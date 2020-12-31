@@ -22,6 +22,18 @@ const useStyles = makeStyles({
         color: "#313342",
         textAlign: "left",
         paddingBottom: "18px"
+    },
+    title5:{
+        fontSize: 16,
+        color: '#7581D8',
+        textAlign: "center",
+        paddingBottom: "18px"
+    },
+    title6:{
+        fontSize: 16,
+        color: '#313342',
+        textAlign: "center",
+        paddingBottom: "18px"
     }
   });
 const CustomTypography = ({name, children}) => {

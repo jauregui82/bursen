@@ -1,3 +1,4 @@
 import {CustomCard} from "./Card";
 import {CustomAccordion} from "./Accordion";
-export {CustomCard, CustomAccordion};
+import {CustomModal} from "./Modal/Modal.js";
+export {CustomCard, CustomAccordion, CustomModal};

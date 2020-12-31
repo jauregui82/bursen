@@ -7,15 +7,14 @@ import { palett } from "../../../../styles/theme";
  * @param {('btnRed'|'btnWhite')} type - if btnRed button is color red, else btnWhite is color white
  * @param {boolean} disabled - True o false disabled button
  */
-const CustomButton = ({ action, children, type, disabled }) =>{
+const CustomButton = ({ action, actionText, children, type, disabled, fullWidth }) =>{
 
     return(
         <>
             <button
-                className={type ?? "btnRed"}
-                onClick={() => action && [action()]}
+                className={`${type ? type : "btnRed"} ${fullWidth ? "fullWidth" : ""}`}
+                onClick={() => action && [action(actionText && actionText)]}
                 disabled={disabled}
-                type={type}
             >
                 {children}
             </button>
@@ -44,12 +43,20 @@ const CustomButton = ({ action, children, type, disabled }) =>{
                     .btnRed:hover {
                         background-color: ${palett.primary.light};
                     }
+                    .btnRed:disabled,
+                        button[disabled]{
+                        background-color: #de9493;
+                    }
                     .btnWhite {
                         background-color: ${palett.white};
                         color: ${palett.text.btn.dark};
+                        box-shadow: 0px 2px 5px 2px rgba(112, 115, 143, 0.15);
                     }
                     .btnWhite:hover {
                         background-color: #f5f5f5;
+                    }
+                    .fullWidth {
+                        width: 100%;
                     }
                 `}
             </style>

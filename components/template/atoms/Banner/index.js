@@ -1,8 +1,24 @@
 import { Grid } from "@material-ui/core"
 import CustomButton from "../CustomButton"
-import { CustomTypography } from "../../../template"
+import { CustomTypography, CustomModal } from "../../../template"
+import { useEffect, useState } from "react";
 
 const CustonBanner = () => {
+	const [open, setOpen] = useState(false);
+	const [openCourses, setOpenCourses] = useState(false);
+
+	const handleClickOpenCourses = () => {
+		setOpenCourses(true);
+	};
+
+	const handleClickOpen = (action) => {
+			setOpen(true);
+	};
+  const handleClose = () => {
+		setOpen(false);
+		setOpenCourses(false)
+	};
+
   return (
     <>
     <div className="content-section-1">
@@ -25,10 +41,10 @@ const CustonBanner = () => {
                         <CustomTypography name="title1" > Bienvenido al simulador de <strong>BURSEN</strong></CustomTypography>
                     </Grid>
                     <Grid item>
-                        <CustomButton>Iniciar sesión </CustomButton>
+                        <CustomButton action={handleClickOpen}>Iniciar sesión </CustomButton>
                     </Grid>
                     <Grid item>
-                        <CustomButton type="btnWhite">Ver consursos </CustomButton>
+                        <CustomButton action={handleClickOpenCourses} actionText="courses" type="btnWhite">Ver consursos </CustomButton>
                     </Grid>
                 </Grid>
             </Grid>
@@ -36,6 +52,8 @@ const CustonBanner = () => {
                 <img className="image" src="/imgPc.svg" alt="me"/>
             </Grid>
         </Grid>
+				<CustomModal open={open} handleClose={handleClose} />
+				<CustomModal open={openCourses} handleClose={handleClose}  actionText={"courses"}/>
     </div>
         {/* <img className="image" src="/banner.svg" alt="me"/> */}
 

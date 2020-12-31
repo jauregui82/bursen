@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 import GoogleMapView from "../../../GoogleMapView";
 import { CustomTypography } from "../../atoms";
@@ -6,12 +6,20 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import CallIcon from '@material-ui/icons/Call';
 import RoomIcon from '@material-ui/icons/Room';
 
+const useStyles = makeStyles((theme) => ({
+  contacto: {
+		paddingTop: '2rem',
+	}
+}));
 
+
+	
 const Section5 = () =>{
+	const classes = useStyles();
     return(
         <div id="contacto">
             <Grid container>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={4}  className={classes.contacto}>
                     <Grid container>
                         <Grid item xs={4}/>
                         <Grid item xs={8}>
@@ -85,13 +93,13 @@ const Section5 = () =>{
                 </Grid>
             </Grid>
             <style jsx>
-                {`
+							{`
                 div {
-                    padding: 2rem 0 0 3rem;
-                    background-color: #EEEFF9;
+									padding: 0 0 0 3rem;
+									background-color: #EEEFF9;
                 }
                 
-                `}
+							`}
             </style>
         </div>
     )

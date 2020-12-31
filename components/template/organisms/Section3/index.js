@@ -6,12 +6,18 @@ import Head from "next/head";
 import { CustomTypography } from "../../../template";
 
 const slides = [
-	<div className="item-video"><a className="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ"></a></div>,
-	<div className="item-video" data-merge="1"><a className="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ"></a></div>,
-  <img src="https://picsum.photos/749/499/?random" alt="2" />,
-  <img src="https://picsum.photos/749/499/?random" alt="3" />,
-  <img src="https://picsum.photos/749/499/?random" alt="4" />,
-  <img src="https://picsum.photos/749/499/?random" alt="5" />,
+		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
+		</video>,
+		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
+		</video>,
+		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
+		</video>,
+		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
+		</video>,
 ];
 const Section3 = () => {
   const OwlCarousel = dynamic(() => import("react-owl-carousel"));
@@ -42,22 +48,60 @@ const Section3 = () => {
         ))}
       </OwlCarousel>
 			<div className={"affterSlider"}/>
-			<style jsx>
-							{`
-								.title1 {
-									padding-bottom: 11rem;
-								}
-								.owl-video-play-icon {
-									background: url(./video.svg) no-repeat;
-								}
-								.affterSlider {
-									width: 100%;
-									height: 262px;
-									background-color: #313342;
-									position: absolute;
-									bottom: -25px;
-								}
-							`}
+				<style>
+						{`
+							.owl-item.active.center {
+									transform: scale(1.4);
+									z-index: 1;
+							}
+							.owl-item {
+								transition: .5s;
+							}
+							.owl-carousel .owl-stage-outer {
+								height: calc(100vh - 400px);
+								padding-top: 70px;
+							}
+							.owl-video-play-icon {
+								background: url(./video.svg) no-repeat;
+							}
+							.affterSlider {
+								width: 100%;
+								height: 262px;
+								background-color: #313342;
+								position: absolute;
+								bottom: -25px;
+							}
+							.owl-nav {
+								display: flex;
+								justify-content: space-between;
+								position: relative;
+								top: -20rem;
+							}
+							.owl-prev{
+								width: 55px;
+								height: 55px;
+								position: absolute!important;
+								background-color: #FFFFFF!important;
+								border-radius: 50%!important;
+								font-size: 2rem!important;
+								left: 4rem;
+							}
+							.owl-next{
+								width: 55px;
+								height: 55px;
+								position: absolute!important;
+								background-color: #FFFFFF!important;
+								border-radius: 50%!important;
+								font-size: 2rem!important;
+								right: 4rem;
+							}
+							.owl-dot.active > span{
+								background: #BD2626!important;
+								width: 18px!important;
+								height: 18px!important;
+								margin: 1px 7px!important;
+							}
+						`}
 					</style>
     </div>
   );
