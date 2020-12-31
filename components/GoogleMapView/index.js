@@ -125,8 +125,15 @@ let containerElementStyle = {
 function GoogleMapView() {
   return (
     <>
+      <style jsx>
+        {`
+          .map > div{
+            height: 100%;
+          }
+          `}
+      </style>
     <MapComponent
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGVBbUsPq0SZ0skOwpeDR-_LlWeWj9kyg"
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQz6PV-_MHbIASW0Ul7WzpmqyG1dyTuwI"
       loadingElement={<div style={loadingElementStyle} />}
       containerElement={
         <div
