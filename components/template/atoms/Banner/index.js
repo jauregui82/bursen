@@ -18,42 +18,46 @@ const CustonBanner = () => {
 		setOpen(false);
 		setOpenCourses(false)
 	};
+	const handleRegister = () =>{
+		setOpen(false);
+		setOpenCourses(true);
+	}
 
   return (
     <>
     <div className="content-section-1">
-        <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            style={{height:"100%"}}
-        >
-            <Grid item xs={12} md={3}>
-                <Grid
-                    container
-                    direction="column"
-                    justify="center"
-                    alignItems="flex-start"
-                    spacing={3}
-                >
-                    <Grid item>
-                        <CustomTypography name="title1" > Bienvenido al simulador de <strong>BURSEN</strong></CustomTypography>
-                    </Grid>
-                    <Grid item>
-                        <CustomButton action={handleClickOpen}>Iniciar sesión </CustomButton>
-                    </Grid>
-                    <Grid item>
-                        <CustomButton action={handleClickOpenCourses} actionText="courses" type="btnWhite">Ver consursos </CustomButton>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid item xs={12} md={9}>
-                <img className="image" src="/imgPc.svg" alt="me"/>
-            </Grid>
-        </Grid>
-				<CustomModal open={open} handleClose={handleClose} />
-				<CustomModal open={openCourses} handleClose={handleClose}  actionText={"courses"}/>
+			<Grid
+					container
+					direction="row"
+					justify="center"
+					alignItems="center"
+					style={{height:"100%"}}
+			>
+				<Grid item xs={12} md={3}>
+						<Grid
+								container
+								direction="column"
+								justify="center"
+								alignItems="flex-start"
+								spacing={3}
+						>
+								<Grid item>
+										<CustomTypography name="title1" > Bienvenido al simulador de <strong>BURSEN</strong></CustomTypography>
+								</Grid>
+								<Grid item>
+										<CustomButton action={handleClickOpen}>Iniciar sesión </CustomButton>
+								</Grid>
+								<Grid item>
+										<CustomButton action={handleClickOpenCourses} actionText="courses" type="btnWhite">Ver consursos </CustomButton>
+								</Grid>
+						</Grid>
+				</Grid>
+				<Grid item xs={12} md={9}>
+						<img className="image" src="/imgPc.svg" alt="me"/>
+				</Grid>
+			</Grid>
+			<CustomModal open={open} handleClose={handleClose} handleRegister={handleRegister}/>
+			<CustomModal open={openCourses} handleClose={handleClose}  actionText={"courses"}/>
     </div>
         {/* <img className="image" src="/banner.svg" alt="me"/> */}
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -150,7 +150,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -172,8 +172,12 @@ const currencies = [
 	}
 ];
 
-const contentTabs = ({currency, handleChangeSelect}) =>{
+const contentTabs = ({currency, handleChangeSelect, veremos}) =>{
 	const classes = useStyles();
+	const prueba = () =>{
+		console.log('hola>>>>');
+		// veremos()
+	}
 	return(
 		<>
 			<Grid container spacing={2} direction="column" justify="center">
@@ -233,7 +237,7 @@ const contentTabs = ({currency, handleChangeSelect}) =>{
 					<CustomTypography name="title6"> ¿No tienes una cuenta? </CustomTypography>
 				</Grid>
 				<Grid item xs={12}>
-					<CustomButton type="btnWhite" fullWidth> Regístrate </CustomButton>
+					<CustomButton type="btnWhite" fullWidth action={prueba}> Regístrate1 </CustomButton>
 				</Grid>
 			</Grid>
 		<DialogActions />	
@@ -251,11 +255,11 @@ const contentCourses = ({currency, handleChangeSelect}) =>{
 				</Grid>
 				<Grid item xs={12}>
 					<Grid container margin={10}>
-						<Grid item xs={6}>
+						<Grid item xs={5}>
 							<img src="./individual.svg" />
 							<CustomTypography name="title6">Inscripción individual </CustomTypography>
 						</Grid>
-						<Grid item xs={6}>
+						<Grid item xs={5}>
 							<img src="./concursar.svg" />
 							<CustomTypography name="title6">Quiero concursar </CustomTypography>
 						</Grid>
@@ -274,7 +278,8 @@ const contentCourses = ({currency, handleChangeSelect}) =>{
 }
 
 
-const CustomModal = ({open,  handleClose, actionText}) => {
+const CustomModal = ({open,  handleClose, actionText, handleRegister}) => {
+	const classes = useStyles();
 	const theme = useTheme();
 	const [value, setValue] = useState(0);
 	const [currency, setCurrency] = useState('dni');
@@ -287,6 +292,9 @@ const CustomModal = ({open,  handleClose, actionText}) => {
     setValue(newValue);
 	};
 	
+	const veremos = () =>{
+		handleRegister()
+	}
 
   return (
     <div>
@@ -306,10 +314,134 @@ const CustomModal = ({open,  handleClose, actionText}) => {
 								<Tab label="Soy Docente" />
 							</CustomTabs>
 							<TabPanel value={value} index={0} dir={theme.direction}>
-								{contentTabs(currency,handleChangeSelect)}
+								<>
+									<Grid container spacing={2} direction="column" justify="center">
+										<Grid item xs={12}>
+											<Grid container spacing={0}>
+												<Grid item xs={4}>
+
+													<CssTextFieldSelect 
+														className={classes.select}
+														variant="outlined"
+														fullWidth 
+														select 
+														value={currency}
+														onChange={handleChangeSelect}
+													>
+														{currencies.map((option) => (
+															<MenuItem key={option.value} value={option.value}>
+																{option.label}
+															</MenuItem>
+														))}
+													</CssTextFieldSelect>
+												</Grid>
+												<Grid item xs={8}>
+													<CssTextFieldInput variant="outlined" fullWidth  />
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid item xs={12}>
+											<CssTextField
+												fullWidth
+												variant="outlined"
+												placeholder="Contraseña"
+												InputProps={{
+													startAdornment: (
+														<InputAdornment position="start">
+															<HttpsIcon style={{color:"7581D8"}}/>
+														</InputAdornment>
+													),
+													endAdornment: (
+														<InputAdornment position="start">
+															<VisibilityOffIcon style={{color:"7581D8"}}/>
+														</InputAdornment>
+													),
+												}}
+											/>
+										</Grid>
+										<Grid item xs={12}>
+											<CustomButton fullWidth > Iniciar sesión</CustomButton>
+										</Grid>
+										<Grid item xs={12}>
+											<>
+												<CustomTypography name="title5"> ¿Olvidaste tu contraseña? </CustomTypography>
+												<hr/>
+											</>
+										</Grid>
+										<Grid item xs={12}>
+											<CustomTypography name="title6"> ¿No tienes una cuenta? </CustomTypography>
+										</Grid>
+										<Grid item xs={12}>
+											<CustomButton type="btnWhite" fullWidth action={veremos}> Regístrate </CustomButton>
+										</Grid>
+									</Grid>
+									<DialogActions />	
+								</>	
 							</TabPanel>
 							<TabPanel value={value} index={1} dir={theme.direction}>
-								{contentTabs(currency,handleChangeSelect)}
+								<>
+									<Grid container spacing={2} direction="column" justify="center">
+										<Grid item xs={12}>
+											<Grid container spacing={0}>
+												<Grid item xs={4}>
+
+													<CssTextFieldSelect 
+														className={classes.select}
+														variant="outlined"
+														fullWidth 
+														select 
+														value={currency}
+														onChange={handleChangeSelect}
+													>
+														{currencies.map((option) => (
+															<MenuItem key={option.value} value={option.value}>
+																{option.label}
+															</MenuItem>
+														))}
+													</CssTextFieldSelect>
+												</Grid>
+												<Grid item xs={8}>
+													<CssTextFieldInput variant="outlined" fullWidth  />
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid item xs={12}>
+											<CssTextField
+												fullWidth
+												variant="outlined"
+												placeholder="Contraseña"
+												InputProps={{
+													startAdornment: (
+														<InputAdornment position="start">
+															<HttpsIcon style={{color:"7581D8"}}/>
+														</InputAdornment>
+													),
+													endAdornment: (
+														<InputAdornment position="start">
+															<VisibilityOffIcon style={{color:"7581D8"}}/>
+														</InputAdornment>
+													),
+												}}
+											/>
+										</Grid>
+										<Grid item xs={12}>
+											<CustomButton fullWidth > Iniciar sesión</CustomButton>
+										</Grid>
+										<Grid item xs={12}>
+											<>
+												<CustomTypography name="title5"> ¿Olvidaste tu contraseña? </CustomTypography>
+												<hr/>
+											</>
+										</Grid>
+										<Grid item xs={12}>
+											<CustomTypography name="title6"> ¿No tienes una cuenta? </CustomTypography>
+										</Grid>
+										<Grid item xs={12}>
+											<CustomButton type="btnWhite" fullWidth action={veremos}> Regístrate </CustomButton>
+										</Grid>
+									</Grid>
+									<DialogActions />	
+								</>	
 							</TabPanel>
 						</>
 					)}
