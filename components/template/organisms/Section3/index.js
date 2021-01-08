@@ -6,22 +6,22 @@ import Head from "next/head";
 import { CustomTypography } from "../../../template";
 
 const slides = [
-		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+		<video autobuffer autoplay controls muted muted autoplay preload="auto" width="100%" height="100%" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
 			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
 		</video>,
-		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+		<video autobuffer autoplay controls muted muted autoplay preload="auto" width="100%" height="100%" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
 			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
 		</video>,
-		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+		<video autobuffer autoplay controls muted muted autoplay preload="auto" width="100%" height="100%" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
 			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
 		</video>,
-		<video autobuffer controls preload="auto" width="100%" height="499" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
+		<video autobuffer autoplay controls muted muted autoplay preload="auto" width="100%" height="100%" style={{backgroundColor: "#000"}} poster="" data-description="Lorem ipsum dolor amet">
 			<source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
 		</video>,
 ];
 const Section3 = () => {
   const OwlCarousel = dynamic(() => import("react-owl-carousel"));
-	
+
   return (
     <div id="como-usar-simulador" style={{position:"relative", paddingBottom: "3rem", marginBottom: "8rem"}}>
       <Head>
@@ -33,11 +33,11 @@ const Section3 = () => {
 			<div className={"title1"}>
 				<CustomTypography  name="title2">¿Cómo usar este simulador?</CustomTypography>
 			</div>
-      <OwlCarousel 
-        className="owl-theme" 
-        loop 
-        center 
-        margin={10} 
+      <OwlCarousel
+        className="owl-theme"
+        loop
+        center
+        margin={10}
 				nav
 				video
       >
@@ -51,22 +51,22 @@ const Section3 = () => {
 				<style>
 						{`
 							.owl-item.active.center {
-									transform: scale(1.4);
+									transform: scale(1.7);
 									z-index: 1;
 							}
 							.owl-item {
 								transition: .5s;
 							}
 							.owl-carousel .owl-stage-outer {
-								height: calc(100vh - 400px);
-								padding-top: 70px;
+								height: calc(100vh - 350px);
+								padding-top: 5%;
 							}
 							.owl-video-play-icon {
 								background: url(./video.svg) no-repeat;
 							}
 							.affterSlider {
 								width: 100%;
-								height: 262px;
+								height: 50%;
 								background-color: #313342;
 								position: absolute;
 								bottom: -25px;
@@ -74,8 +74,9 @@ const Section3 = () => {
 							.owl-nav {
 								display: flex;
 								justify-content: space-between;
-								position: relative;
-								top: -20rem;
+								position: absolute;
+								top: calc(50% - 60px);
+								width: 100%;
 							}
 							.owl-prev{
 								width: 55px;
@@ -100,6 +101,12 @@ const Section3 = () => {
 								width: 18px!important;
 								height: 18px!important;
 								margin: 1px 7px!important;
+							}
+							.owl-dots {
+								position: absolute;
+								bottom: -40px;
+								left: 0;
+								right: 0;
 							}
 						`}
 					</style>
